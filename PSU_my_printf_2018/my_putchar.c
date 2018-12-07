@@ -5,7 +5,7 @@
 ** my_putchar
 */
 
-#include "../../include/my.h"
+#include "include/my.h"
 #include <unistd.h>
 
 void my_putchar(char c)

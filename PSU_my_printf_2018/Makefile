@@ -2,30 +2,34 @@
 ## EPITECH PROJECT, 2018
 ## Makefile
 ## File description:
-## Make my files
+## Makefile
 ##
 
-SRC	=	*.c
+SRC =   my_printf.c \
+        my_putstr.c \
+        my_putnbr.c    \
+        my_putchar.c    \
+        my_binary.c \
+        my_stroctal.c  \
+        my_hexa.c   \
+        my_upper_hexa.c	\
+		my_long_putnbr.c	\
+		my_strlen.c
 
-FILES	=	*.o
+OBJ =   $(SRC:.c=.o)
 
-NAME	=	libmy.a
+NAME    =   libmy.a
 
-NAME2	=	my.h
+all:    $(NAME)
 
-CP	=	cp
-
-all:	$(NAME)
-
-$(NAME):
-	gcc -c $(SRC)
-	ar rc $(NAME) $(FILES)
-	mv $(NAME) lib/my
+$(NAME):    $(OBJ)
+	ar rc $(NAME) $(OBJ)
 
 clean:
-	rm -rf $(FILES)
+	rm -f $(OBJ)
 
 fclean: clean
-	rm lib/my/$(NAME)
+	rm -f $(NAME)
 
 re: fclean all
+
